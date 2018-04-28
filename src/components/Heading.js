@@ -10,8 +10,4 @@ const Heading = styled.h1`
   font-family: 'Roboto Slab', serif;
 `
 
-export default ({ text }) => (
-  <Heading>
-    {text}
-  </Heading>
-)
+export default ({ text }) => <Heading>{text}</Heading>
