@@ -31,12 +31,37 @@ const Line = styled.div`
 
 const SlideContainer = styled.div`
   width: 30000px;
-  transition: 10s;
+  transition: all 10s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
 `
 
 const Item = styled.img`
   height: 280px;
   margin-right: 10px;
+`
+
+const Base = styled.div`
+  position: absolute;
+  width: 100vw;
+  z-index: 999;
+
+  & > div:nth-child(1) {
+    width: 20px;
+    height: 350px;
+    left: 0;
+    top: -10px;
+    position: absolute;
+    background: #F8D063;
+  }
+
+  & > div:nth-child(2) {
+    width: 20px;
+    height: 350px;
+    right: 0;
+    top: -10px;
+    position: absolute;
+    background: #F8D063;
+  }
 `
 
 export default class Random extends Component {
@@ -68,6 +93,10 @@ export default class Random extends Component {
   render() {
     return (
       <div>
+        <Base>
+          <div></div>
+          <div></div>
+        </Base>
         <Container>
           <Line />
           <SlideContainer style={{'marginLeft': `-${this.state.left}px`}}>
