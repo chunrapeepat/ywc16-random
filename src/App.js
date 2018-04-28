@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled, { injectGlobal } from 'styled-components'
 
 import Heading from './components/Heading'
+import Random from './components/Random'
 
 injectGlobal`
   body {
@@ -12,7 +13,7 @@ injectGlobal`
 `
 
 const Background = styled.div`
-  z-index: 0;
+  z-index: -999;
   position: absolute;
 
   width: 100vw;
@@ -32,6 +33,7 @@ class App extends Component {
       <div>
         <Background />
         <Heading text="Junior Webmaster Camp #10"/>
+        <Random />
       </div>
     )
   }
