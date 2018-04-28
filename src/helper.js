@@ -23,3 +23,5 @@ export const removed = [
 ]
 export const target = groupsObject.demiter
 export const groups = groupsObject
+
+export const WindowWidth = 1680

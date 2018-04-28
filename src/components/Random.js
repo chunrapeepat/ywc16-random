@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
-import {groups, target, groupidToString, removed} from '../helper'
+import {groups, target, groupidToString, removed, WindowWidth} from '../helper'
 
 const HiddenButton = styled.div`
   position: absolute;
@@ -42,7 +42,7 @@ const Item = styled.img`
 export default class Random extends Component {
   state = {
     // default to center when screen width is 1680px;
-    left: 170,
+    left: 170 + (WindowWidth / 2 - window.innerWidth / 2),
     items: [],
   }
 
