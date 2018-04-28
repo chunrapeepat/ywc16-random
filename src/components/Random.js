@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
+import Sound from 'react-sound'
 
-import {groups, target, groupidToString, removed, WindowWidth} from '../helper'
+import {groups, target, groupidToString, removed, WindowWidth, SoundMode} from '../helper'
 
 const HiddenButton = styled.div`
   position: absolute;
@@ -31,8 +32,8 @@ const Line = styled.div`
 
 const SlideContainer = styled.div`
   width: 30000px;
-  transition: all 10s;
-  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+  transition: all 15s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 0.6, 0.1);
 `
 
 const Item = styled.img`
@@ -69,6 +70,8 @@ export default class Random extends Component {
     // default to center when screen width is 1680px;
     left: 170 + (WindowWidth / 2 - window.innerWidth / 2),
     items: [],
+    playsound: false,
+    playDingSound: false,
   }
 
   constructor() {
@@ -87,12 +90,21 @@ export default class Random extends Component {
   }
 
   startRandom = () => {
-    this.setState({ left: this.state.left + 22000 })
+    this.setState({ left: this.state.left + 22000, playsound: true })
+    setTimeout(() => {
+      this.setState({ playDingSound: true })
+    }, 15 * 1000)
   }
 
   render() {
     return (
       <div>
+        {this.state.playsound &&
+          <Sound autoLoad={true} url={`/sounds/${SoundMode}.mp3`} playStatus={Sound.status.PLAYING}/>
+        }
+        {this.state.playDingSound &&
+          <Sound autoLoad={true} url={`/sounds/ding.mp3`} playStatus={Sound.status.PLAYING}/>
+        }
         <Base>
           <div></div>
           <div></div>

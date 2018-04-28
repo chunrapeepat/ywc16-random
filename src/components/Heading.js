@@ -5,7 +5,7 @@ const Heading = styled.h1`
   color: white;
   position: block;
   font-size: 50px;
-  margin: 100px 0;
+  margin: 80px 0;
   text-align: center;
   font-family: 'Roboto Slab', serif;
 `
