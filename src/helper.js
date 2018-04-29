@@ -14,10 +14,10 @@ export function groupidToString(groupID) {
 }
 
 export const removed = [
-  groupsObject.aprodrite,
-  groupsObject.ares,
-  groupsObject.demiter,
-  groupsObject.dionisus,
+  // groupsObject.aprodrite,
+  // groupsObject.ares,
+  // groupsObject.demiter,
+  // groupsObject.dionisus,
   // groupsObject.hades,
   // groupsObject.hestia,
 ]
