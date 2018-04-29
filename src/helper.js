@@ -16,18 +16,19 @@ export function groupidToString(groupID) {
 // 1. hades
 // 2. ares
 // 3. aprodrite
+// 4. dionisus
 
 export const removed = [
   groupsObject.aprodrite,
   groupsObject.ares,
   // groupsObject.demiter,
-  // groupsObject.dionisus,
+  groupsObject.dionisus,
   groupsObject.hades,
   // groupsObject.hestia,
 ]
-export const target = groupsObject.dionisus
+export const target = groupsObject.hestia
 export const groups = groupsObject
 
 // special1 (vi###) special2(JWC48) or normal
-export const SoundMode = "special1"
+export const SoundMode = "epic"
 export const WindowWidth = 1680
