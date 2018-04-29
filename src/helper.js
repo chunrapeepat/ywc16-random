@@ -13,15 +13,17 @@ export function groupidToString(groupID) {
   return keys[values.indexOf(groupID)]
 }
 
+// 1. hades
+
 export const removed = [
   // groupsObject.aprodrite,
   // groupsObject.ares,
   // groupsObject.demiter,
   // groupsObject.dionisus,
-  // groupsObject.hades,
+  groupsObject.hades,
   // groupsObject.hestia,
 ]
-export const target = groupsObject.hades
+export const target = groupsObject.ares
 export const groups = groupsObject
 
 // special1 (vi###) special2(JWC48) or normal
