@@ -14,16 +14,16 @@ export function groupidToString(groupID) {
 }
 
 export const removed = [
-  // groupsObject.aprodrite,
-  // groupsObject.ares,
-  // groupsObject.demiter,
-  // groupsObject.dionisus,
+  groupsObject.aprodrite,
+  groupsObject.ares,
+  groupsObject.demiter,
+  groupsObject.dionisus,
   // groupsObject.hades,
   // groupsObject.hestia,
 ]
-export const target = groupsObject.demiter
+export const target = groupsObject.hades
 export const groups = groupsObject
 
 // special1 (vi###) special2(JWC48) or normal
-export const SoundMode = "special2"
+export const SoundMode = "epic"
 export const WindowWidth = 1680
