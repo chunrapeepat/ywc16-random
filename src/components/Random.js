@@ -67,10 +67,6 @@ export default class Random extends Component {
     }, 15 * 1000)
   }
 
-  animationFrame = (x, i) => {
-
-  }
-
   render() {
     return (
       <div>
