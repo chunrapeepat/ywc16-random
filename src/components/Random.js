@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import Sound from 'react-sound'
 
-import {target, groupidToString, removed, WindowWidth, SoundMode} from '../helper'
+import {mode, target, groupidToString, removed, WindowWidth, SoundMode} from '../helper'
 
 const Line = styled.div`
   width: 150vw;
@@ -20,7 +20,7 @@ const Line = styled.div`
 const SlideContainer = styled.div`
   width: 25000px;
   transition: all 15s;
-  transition-timing-function: cubic-bezier(0.1, 0.7, 0.6, 0.1);
+  transition-timing-function: ${mode.val};
 `
 
 const Item = styled.div`

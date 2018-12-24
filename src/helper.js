@@ -1,3 +1,5 @@
+import Random from "./components/Random";
+
 const groupsObject = {
   A: 1,
   B: 2,
@@ -21,6 +23,15 @@ export const removed = []
 
 export const target = groupsObject.A
 export const groups = groupsObject
+
+// random mode
+const RandomMode = {
+  normal: {val: `cubic-bezier(0.1,0.7,0.6,0.1)`},
+  advanced: {val: `cubic-bezier(.59,1.18,.91,-0.3)`},
+  linear: {val: `ease-in-out`},
+}
+
+export const mode = RandomMode.linear
 
 // special1 (vi###) special2(JWC48) or normal
 export const SoundMode = "epic"
