@@ -2,24 +2,7 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import Sound from 'react-sound'
 
-import {groups, target, groupidToString, removed, WindowWidth, SoundMode} from '../helper'
-
-const HiddenButton = styled.div`
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
-  bottom: 0;
-  right: 0;
-`
-
-const Container = styled.div`
-  width: 100%;
-  padding: 10px 0;
-  background: black;
-  position: relative;
-  overflow-x: hidden;
-`
+import {target, groupidToString, removed, WindowWidth, SoundMode} from '../helper'
 
 const Line = styled.div`
   width: 100vw;
@@ -88,14 +71,13 @@ export default class Random extends Component {
         {this.state.playDingSound &&
           <Sound autoLoad={true} url={`/sounds/ding.mp3`} playStatus={Sound.status.PLAYING}/>
         }
-          <Line />
+          <Line onClick={this.startRandom}/>
           <SlideContainer style={{'marginLeft': `-${this.state.left}px`}}>
             {this.state.items.map((x, i) => {
               console.log(x)
               return <Item key={`key${x}${i}`} src={`/assets/${x}.svg`}/>
             })}
           </SlideContainer>
-        <HiddenButton onClick={this.startRandom} />
       </div>
     )
   }

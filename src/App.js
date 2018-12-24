@@ -26,12 +26,25 @@ const Background = styled.div`
   background: linear-gradient(10deg, #00152a, #3E0009);
 `
 
+const Rotate = styled.div`
+  height: 100vh;
+  transform: rotate(-30deg);
+`
+
+const Container = styled.div`
+  overflow: hidden;
+`
+
 class App extends Component {
   render() {
     return (
       <div>
         <Background />
-        <Random />
+        <Container>
+          <Rotate>
+            <Random />
+          </Rotate>
+        </Container>
       </div>
     )
   }
