@@ -39,7 +39,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Background />
+        {/* <Background /> */}
+        <video id="background-video" style={{ zIndex: -100, position:'absolute'}} loop src="assets/video/bg-tower-random.mp4"></video>
+        <img src="assets/logo16write.svg" style={{ position: 'absolute', marginLeft: "3%", marginTop: "3%",  height:"5rem"}}  alt="logo"/>
         <Container>
           <Rotate>
             <Random />
