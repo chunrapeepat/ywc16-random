@@ -5,10 +5,12 @@ import Sound from 'react-sound'
 import {target, groupidToString, removed, WindowWidth, SoundMode} from '../helper'
 
 const Line = styled.div`
-  width: 100vw;
+  width: 150vw;
   height: 100px;
   position: absolute;
   top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 999999;
 
   background: url(/assets/train.svg) center center;
