@@ -23,5 +23,5 @@ export const target = groupsObject.A
 export const groups = groupsObject
 
 // special1 (vi###) special2(JWC48) or normal
-export const SoundMode = "epic"
+export const SoundMode = "special1"
 export const WindowWidth = 1680
