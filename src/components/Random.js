@@ -12,7 +12,7 @@ const Line = styled.div`
   left: 50%;
   transform: translateX(-50%);
   z-index: 999999;
-  background: url(/assets/new/train.svg) center center;
+  background: url(/assets/train.svg) center center;
   background-size: auto 100%;
 `
 
@@ -80,7 +80,7 @@ export default class Random extends Component {
           <Line onClick={this.startRandom}/>
           <SlideContainer style={{'marginLeft': `-${this.state.left}px`}}>
             {this.state.items.map((x, i) => {
-              return <Item key={`key${x}${i}`} src={`/assets/new/${x}.svg`}/>
+              return <Item key={`key${x}${i}`} src={`/assets/${x}.svg`}/>
             })}
           </SlideContainer>
       </div>
