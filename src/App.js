@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled, { injectGlobal } from 'styled-components'
 
-import Heading from './components/Heading'
 import Random from './components/Random'
 
 injectGlobal`
@@ -32,7 +31,6 @@ class App extends Component {
     return (
       <div>
         <Background />
-        <Heading text="Junior Webmaster Camp #10"/>
         <Random />
       </div>
     )

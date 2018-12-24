@@ -39,11 +39,13 @@ const SlideContainer = styled.div`
 `
 
 const Item = styled.div`
-  height: 1400px;
+  height: 600px;
+  width: 400px;
   margin-right: 10px;
-  transform: translateX(-60px) translateY(-200px);
   z-index: -999;
+  transform: translateX(-200px) translateY(-200px);
   background: url(${props => props.src}) no-repeat center center;
+  background: contain;
 `
 
 export default class Random extends Component {
