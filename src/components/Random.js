@@ -58,6 +58,7 @@ export default class Random extends Component {
   }
 
   startRandom = () => {
+    document.getElementById("background-video").play()
     this.setState({ left: this.state.left + 22400, playsound: true })
     setTimeout(() => {
       this.setState({ playDingSound: true })

@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div>
         {/* <Background /> */}
-        <video style={{ zIndex: -100, position:'absolute'}} autoPlay loop src="assets/video/bg-tower-random.mp4"></video>
+        <video id="background-video"style={{ zIndex: -100, position:'absolute'}} loop src="assets/video/bg-tower-random.mp4"></video>
         <Container>
           <Rotate>
             <Random />
