@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import Sound from 'react-sound'
 
-import {target, groupidToString, removed, WindowWidth, SoundMode} from '../helper'
+import {mode, target, groupidToString, removed, WindowWidth, SoundMode} from '../helper'
 
 const Line = styled.div`
   width: 150vw;
@@ -12,15 +12,14 @@ const Line = styled.div`
   left: 50%;
   transform: translateX(-50%);
   z-index: 999999;
-
   background: url(/assets/new/train.svg) center center;
   background-size: auto 100%;
 `
 
 const SlideContainer = styled.div`
-  width: 30000px;
+  width: 25000px;
   transition: all 15s;
-  transition-timing-function: cubic-bezier(0.1, 0.7, 0.6, 0.1);
+  transition-timing-function: ${mode.val};
 `
 
 const Item = styled.div`
@@ -29,15 +28,18 @@ const Item = styled.div`
   margin-right: 10px;
   z-index: -999;
   display: inline-block;
-  transform: translateY(320px);
+  transform: translate3d(0, 350px, 0);
+  will-change: transform;
   background: url(${props => props.src}) no-repeat center center;
   background: contain;
 `
 
+const OFFSET = 120
+
 export default class Random extends Component {
   state = {
-    // default to center when screen width is 1680px;
-    left: 170 + (WindowWidth / 2 - window.innerWidth / 2),
+    // default to center when screen width is 1680px; - offset
+    left: 170 + (WindowWidth / 2 - window.innerWidth / 2) - OFFSET,
     items: [],
     playsound: false,
     playDingSound: false,
@@ -45,7 +47,7 @@ export default class Random extends Component {
 
   constructor() {
     super()
-    const emptyArr = [...new Array(100)].map((x, i) => {
+    const emptyArr = [...new Array(35)].map((x, i) => {
       if (i == 30)
         return groupidToString(target)
       let result;
@@ -58,8 +60,10 @@ export default class Random extends Component {
   }
 
   startRandom = () => {
-    this.setState({ left: this.state.left + 22400, playsound: true })
+    document.getElementById("background-video").play()
+    this.setState({ left: this.state.left + 22650 + OFFSET, playsound: true })
     setTimeout(() => {
+      document.getElementById("background-video").pause()
       this.setState({ playDingSound: true })
     }, 15 * 1000)
   }
@@ -76,7 +80,6 @@ export default class Random extends Component {
           <Line onClick={this.startRandom}/>
           <SlideContainer style={{'marginLeft': `-${this.state.left}px`}}>
             {this.state.items.map((x, i) => {
-              console.log(x)
               return <Item key={`key${x}${i}`} src={`/assets/new/${x}.svg`}/>
             })}
           </SlideContainer>
