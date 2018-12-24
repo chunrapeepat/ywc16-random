@@ -22,12 +22,14 @@ const Container = styled.div`
 `
 
 const Line = styled.div`
-  width: 5px;
-  height: 340px;
+  width: 100vw;
+  height: 100px;
   position: absolute;
-  top: -10px;
-  left: calc(50% - 2.5px);
-  background: #FBE196;
+  top: 50%;
+  z-index: 999999;
+
+  background: url(/assets/train.svg) no-repeat center center;
+  background-size: 110% auto;
 `
 
 const SlideContainer = styled.div`
@@ -36,33 +38,12 @@ const SlideContainer = styled.div`
   transition-timing-function: cubic-bezier(0.1, 0.7, 0.6, 0.1);
 `
 
-const Item = styled.img`
-  height: 280px;
+const Item = styled.div`
+  height: 1400px;
   margin-right: 10px;
-`
-
-const Base = styled.div`
-  position: absolute;
-  width: 100vw;
-  z-index: 999;
-
-  & > div:nth-child(1) {
-    width: 20px;
-    height: 350px;
-    left: 0;
-    top: -10px;
-    position: absolute;
-    background: #F8D063;
-  }
-
-  & > div:nth-child(2) {
-    width: 20px;
-    height: 350px;
-    right: 0;
-    top: -10px;
-    position: absolute;
-    background: #F8D063;
-  }
+  transform: translateX(-60px) translateY(-200px);
+  z-index: -999;
+  background: url(${props => props.src}) no-repeat center center;
 `
 
 export default class Random extends Component {
@@ -105,18 +86,13 @@ export default class Random extends Component {
         {this.state.playDingSound &&
           <Sound autoLoad={true} url={`/sounds/ding.mp3`} playStatus={Sound.status.PLAYING}/>
         }
-        <Base>
-          <div></div>
-          <div></div>
-        </Base>
-        <Container>
           <Line />
-          <SlideContainer style={{'marginLeft': `-${this.state.left}px`}}>
+          <Item src="/assets/A.svg" />
+          {/* <SlideContainer style={{'marginLeft': `-${this.state.left}px`}}>
             {this.state.items.map((x, i) => {
-              return <Item key={`key${x}${i}`} src={`/assets/${groupidToString(x)}.png`}/>
+              return <Item key={`key${x}${i}`} src={`/assets/A.svg`}/>
             })}
-          </SlideContainer>
-        </Container>
+          </SlideContainer> */}
         <HiddenButton onClick={this.startRandom} />
       </div>
     )
