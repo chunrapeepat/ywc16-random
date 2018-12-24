@@ -11,7 +11,7 @@ const Line = styled.div`
   top: 50%;
   z-index: 999999;
 
-  background: url(/assets/train.svg) no-repeat center center;
+  background: url(/assets/train.svg) center center;
   background-size: auto 100%;
 `
 
@@ -27,7 +27,7 @@ const Item = styled.div`
   margin-right: 10px;
   z-index: -999;
   display: inline-block;
-  transform: translateY(330px);
+  transform: translateY(320px);
   background: url(${props => props.src}) no-repeat center center;
   background: contain;
 `
