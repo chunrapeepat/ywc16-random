@@ -29,16 +29,18 @@ const Item = styled.div`
   margin-right: 10px;
   z-index: -999;
   display: inline-block;
-  transform: translate3d(0, 320px, 0);
+  transform: translate3d(0, 350px, 0);
   will-change: transform;
   background: url(${props => props.src}) no-repeat center center;
   background: contain;
 `
 
+const OFFSET = 120
+
 export default class Random extends Component {
   state = {
-    // default to center when screen width is 1680px;
-    left: 170 + (WindowWidth / 2 - window.innerWidth / 2),
+    // default to center when screen width is 1680px; - offset
+    left: 170 + (WindowWidth / 2 - window.innerWidth / 2) - OFFSET,
     items: [],
     playsound: false,
     playDingSound: false,
@@ -60,7 +62,7 @@ export default class Random extends Component {
 
   startRandom = () => {
     document.getElementById("background-video").play()
-    this.setState({ left: this.state.left + 22400, playsound: true })
+    this.setState({ left: this.state.left + 22650 + OFFSET, playsound: true })
     setTimeout(() => {
       document.getElementById("background-video").pause()
       this.setState({ playDingSound: true })
