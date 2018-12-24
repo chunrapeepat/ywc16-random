@@ -11,6 +11,7 @@ injectGlobal`
   }
 `
 
+
 const Background = styled.div`
   z-index: -999;
   position: absolute;
@@ -32,19 +33,22 @@ const Rotate = styled.div`
 `
 
 const Container = styled.div`
-  overflow: hidden;
+  overflow: hidden;  
+  z-index: 100;
 `
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Background />
+        {/* <Background /> */}
+        <video id="background-video"style={{ zIndex: -100, position:'absolute'}} loop src="assets/video/bg-tower-random.mp4"></video>
         <Container>
           <Rotate>
             <Random />
           </Rotate>
         </Container>
+
       </div>
     )
   }
