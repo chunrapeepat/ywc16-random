@@ -1,5 +1,3 @@
-import Random from "./components/Random";
-
 const groupsObject = {
   A: 1,
   B: 2,
@@ -21,7 +19,12 @@ export function groupidToString(groupID) {
 
 export const removed = []
 
-export const target = groupsObject.A
+function random() {
+  const teams = Object.values(groupsObject).filter(x => removed.indexOf(x) === -1)
+  return teams[Math.floor(Math.random() * teams.length)] 
+}
+
+export const target = random()
 export const groups = groupsObject
 
 // random mode
