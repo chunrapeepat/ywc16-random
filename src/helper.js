@@ -17,7 +17,12 @@ export function groupidToString(groupID) {
   return keys[values.indexOf(groupID)]
 }
 
-export const removed = []
+export const removed = [
+  groupsObject.C,
+  groupsObject.E,
+  groupsObject.A,
+  groupsObject.F,
+]
 
 function random() {
   const teams = Object.values(groupsObject).filter(x => removed.indexOf(x) === -1)
@@ -30,11 +35,12 @@ export const groups = groupsObject
 // random mode
 const RandomMode = {
   normal: {val: `cubic-bezier(0.1,0.7,0.6,0.1)`},
+  custom: {val: `cubic-bezier(0.1,0.7,0.1,0.8)`},
   advanced: {val: `cubic-bezier(.59,1.18,.91,-0.3)`},
   linear: {val: `ease-in-out`},
 }
 
-export const mode = RandomMode.linear
+export const mode = RandomMode.advanced
 
 // special1 (vi###) special2(JWC48) or normal
 export const SoundMode = "epic"

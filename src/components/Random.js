@@ -28,7 +28,7 @@ const Item = styled.div`
   margin-right: 10px;
   z-index: -999;
   display: inline-block;
-  transform: translate3d(0, 350px, 0);
+  transform: translate3d(0, 330px, 0);
   will-change: transform;
   background: url(${props => props.src}) no-repeat center center;
   background: contain;
